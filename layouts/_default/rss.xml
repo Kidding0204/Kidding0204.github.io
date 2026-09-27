@@ -8,11 +8,11 @@
     <atom:link href="{{ "feed.xml" | absURL }}" rel="self" type="application/rss+xml" />
     {{ range (where site.RegularPages "Section" "posts").ByDate.Reverse }}
     <item>
-      <title>{{ .Title }}</title>
+      <title>{{ .Title | htmlUnescape }}</title>
       <link>{{ .Permalink }}</link>
       <guid>{{ .Permalink }}</guid>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
-      <description>{{ .Description | default (.Summary | plainify) }}</description>
+      <description>{{ .Description | default (.Summary | plainify) | htmlUnescape }}</description>
     </item>
     {{ end }}
   </channel>
