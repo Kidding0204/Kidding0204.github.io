@@ -22,6 +22,8 @@
 
 在 Emacs 中打开文章，运行 `C-c C-e H H`（`org-hugo-export-wim-to-md`）。导出的 Markdown 会写入 `content/posts/`。`content-org/` 是写作源文件；修改文章后要重新导出。当前 Emacs 配置已安装 `ox-hugo`。
 
+也可以在文章的 Org buffer 中按 `C-c o b`（`my/blog-publish-current-buffer`）：它会保存文章、导出 Markdown、运行 Hugo 构建、只提交当前文章的 `.org` 和 `.md` 文件并推送 `main`。命令只接受本仓库 `content-org/` 下的文件，且要求本地 `main` 与远端同步；若推送失败，本地提交会保留，可在问题解决后运行 `git push origin main`。
+
 在仓库中提交 `.org` 源文件和对应的 `.md` 导出文件，然后推送到 `main`。GitHub Actions 会使用 Hugo 构建并发布：
 
 ```sh
