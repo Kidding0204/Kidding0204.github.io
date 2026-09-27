@@ -1,0 +1,13 @@
+title: meph1st0
+description: 一处记录技术、学习与日常思考的地方。
+url: https://blog.meph1st0.top
+baseurl: ""
+lang: zh-CN
+timezone: Asia/Shanghai
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
+highlighter: rouge
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
